@@ -1,0 +1,16 @@
+{
+    "require": {
+        "slim/slim": "^3.8",
+        "doctrine/orm": "^2.5"
+    }
+ 	"autoload": {
+        "psr-0": {
+            "": "Estoque/src"
+        }
+    },
+    "config": {
+        "bin-dir": "./bin"
+    }
+
+}
+
