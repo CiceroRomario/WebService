@@ -1,10 +1,10 @@
 <?php
 	//arquivo de rotas
 	require dirname(__DIR__).'/model/urls.php';
-	require "model/connection.php";
+
 	require $project_path.'/model/class/Manager.class.php';
 	require $project_path.'/model/class/Connect.class.php';
-	include_once $project_path.'/model/class/User.class.php';
+	require $project_path.'/model/class/User.class.php';
 
 
 	//receber os dados
