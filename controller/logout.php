@@ -1,5 +1,5 @@
 <?php
-	requeri dirname(__DIR__).'/model/urls.php';
+	require dirname(__DIR__).'/model/urls.php';
 
 	//inicia a sessao
 	session_start();

@@ -1,5 +1,6 @@
 <?php
-class Manager extends Connect{
+require "/model/class/Connect.class.php";
+class Manager Extends Connect{
 		public function showQuery($query, $params){
 			$keys = array();
 			$values = array();

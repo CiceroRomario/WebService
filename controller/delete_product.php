@@ -1,8 +1,8 @@
 <?php
-	requeri dirname(__DIR__).'/model/urls.php';
-	requeri $project_path.'/model/class/Connect.class.php';
-	requeri $project_path.'/model/class/Manager.class.php';
-	requeri $project_path.'/model/class/User.class.php';
+	require dirname(__DIR__).'/model/urls.php';
+	require $project_path.'/model/class/Connect.class.php';
+	require $project_path.'/model/class/Manager.class.php';
+	require $project_path.'/model/class/User.class.php';
 
 	session_start();
 
