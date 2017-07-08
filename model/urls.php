@@ -8,18 +8,16 @@
 	$project_path = $_SERVER['DOCUMENT_ROOT']."/$project_name";
 
 
-
-
 	function include_class(){
 
-		require ($GLOBALS['project_path'].'/models/class/User.class.php');
-		require ($GLOBALS['project_path'].'/models/class/Category.class.php');
-		require ($GLOBALS['project_path'].'/models/class/Product.class.php');
-		require ($GLOBALS['project_path'].'/models/class/People.class.php');
+		require ($GLOBALS['project_path'].'/model/class/User.class.php');
+		require ($GLOBALS['project_path'].'/model/class/Category.class.php');
+		require ($GLOBALS['project_path'].'/model/class/Product.class.php');
+		require ($GLOBALS['project_path'].'/model/class/People.class.php');
 
 		//Manager e Connect
-		require ($GLOBALS['project_path'].'/models/class/Connect.class.php');
-		require ($GLOBALS['project_path'].'/models/class/Manager.class.php');
+		require ($GLOBALS['project_path'].'/model/class/Connect.class.php');
+		require ($GLOBALS['project_path'].'/model/class/Manager.class.php');
 		
 		//Incluindo arquivo de validação de mensagens (success, errors e infos)
 		require ($GLOBALS['project_path'].'/controller/validate.php');
