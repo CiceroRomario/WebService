@@ -4,7 +4,7 @@
 	require 'model/urls.php';
 	require 'controller/validate.php';
 	require	//classe de modelo do Usuário
-	include_once 'model/class/User.class.php';
+	require 'model/class/User.class.php';
 	//iniciar a sessao
 	session_start();
 
@@ -28,9 +28,9 @@
 		validate_message();
 
 		if(validate_option() == false){
-			include_once $GLOBALS['project_path'].'/view/welcome.html';
+			include_once $GLOBALS['project_path'].'/templates/welcome.phtml';
 		}
 	}
 
 	//incluindo template
-	include_once 'view/template.html';
+	require 'templates/template.phtml';

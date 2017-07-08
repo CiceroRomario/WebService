@@ -15,7 +15,7 @@
 		}
 
 		//renderizando alert
-		requeri $GLOBALS['project_path'].'/templates/forms/alert.phtml';
+		require $GLOBALS['project_path'].'/templates/forms/alert.phtml';
 	}
 
 	//validar as opções de menu e perfil
@@ -28,8 +28,8 @@
 		//globalizar o objeto usuário
 		global $user;
 
-		requeri $GLOBALS['project_path'].'/model/class/Connect.class.php';
-		requeri $GLOBALS['project_path'].'/model/class/Manager.class.php';
+		require $GLOBALS['project_path'].'/model/class/Connect.class.php';
+		require $GLOBALS['project_path'].'/model/class/Manager.class.php';
 
 		switch($_GET['option']){
 			case "profile":
@@ -38,7 +38,7 @@
 					return false;
 				}
 
-				requeri $GLOBALS['project_path'].'/templates/profile.html';
+				require $GLOBALS['project_path'].'/templates/profile.html';
 
 				break;
 
@@ -47,7 +47,7 @@
 					return false;
 				}
 
-				requeri $GLOBALS['project_path'].'/templates/forms/add_category.phtml';
+				require $GLOBALS['project_path'].'/templates/forms/add_category.phtml';
 
 				break;
 
@@ -74,7 +74,7 @@
 				$delete_destiny = $GLOBALS['project_index'].'/controller/delete_category.php';
 				$update_destiny = $GLOBALS['project_index']."/".$user->profile_page.'.php?option=update_category';
 
-				requeri $GLOBALS['project_path'].'/templates/list_common.phtml';
+				require $GLOBALS['project_path'].'/templates/list_common.phtml';
 
 				echo '<a href="?option=add_category">';
 				echo '<span class="glyphicon glyphicon-plus"></span>';
@@ -91,7 +91,7 @@
 				//tipos de conta
 				$profiles = $manager->select_common('tb_profile', null, null, " ORDER BY profile_name");
 
-				requeri $GLOBALS['project_path'].'/templates/forms/add_user.phtml';
+				require $GLOBALS['project_path'].'/templates/forms/add_user.phtml';
 
 				break;
 
@@ -120,7 +120,7 @@
 				$filter = "id_user";
 				$delete_destiny = $GLOBALS['project_index'].'/controller/delete_user.php';
 				
-				requeri $GLOBALS['project_path'].'/templates/list_common.phtml';
+				require $GLOBALS['project_path'].'/templates/list_common.phtml';
 
 				echo '<a href="?option=add_user">';
 				echo '<span class="glyphicon glyphicon-plus"></span>';
@@ -160,7 +160,7 @@
 				$update_destiny = $GLOBALS['project_index']."/".$user->profile_page.'.php?option=update_product';
 
 
-				requeri $GLOBALS['project_path'].'/templates/list_common.phtml';
+				require $GLOBALS['project_path'].'/templates/list_common.phtml';
 
 
 				echo '<a href="?option=add_product">';
@@ -180,7 +180,7 @@
 
 				$categories = $manager->select_common('tb_category', null, null, "");
 
-				requeri $GLOBALS['project_path'].'/templates/forms/add_product.phtml';
+				require $GLOBALS['project_path'].'/templates/forms/add_product.phtml';
 
 				break;
 
@@ -207,7 +207,7 @@
 
 				$categories = $manager->select_common('tb_category', null, null, "");
 
-				include_once $GLOBALS['project_path'].'/view/forms/update_product.html';
+				require $GLOBALS['project_path'].'/view/forms/update_product.html';
 
 				break;
 
@@ -229,7 +229,7 @@
 				$category = $manager->select_common('tb_category', null, array('id_category'=>$_GET['filter']), "");
 				$category = $category[0];
 
-				requeri $GLOBALS['project_path'].'/templates/forms/update_category.phtml';
+				require $GLOBALS['project_path'].'/templates/forms/update_category.phtml';
 
 				break;
 
