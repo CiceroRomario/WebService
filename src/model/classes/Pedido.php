@@ -14,12 +14,10 @@
 
 /**
  * @Entity
- * @Table(name="produto")
+ * @Table(name="pedido")
  */
-
-class Produto {
- 
- /**
+class Pedido extends Entidade {
+  /**
   *	@var integer @Id
   *      @Column(name="id", type="integer")
   *      @GeneratedValue(strategy="AUTO")
@@ -39,6 +37,7 @@ private $usuario;
 * @OneToMany(targetEntity="Item", mappedBy="pedido",cascade={"persist","remove"})
 **/
 private $itens;
+
 public function __construct($id = 0,$hora = null,$usuario = 0,$itens = array()){
 $this->id = $id;
 $this->hora = $hora;
@@ -53,39 +52,30 @@ $obj->setUsuario( $array['usuario']);
 $obj->setItens( $array['itens']);
 return $obj;
 }
-
 public function getId(){
 return $this->id;
 }
-
 public function setId($id){
  $this->id=$id;
 }
-
 public function getHora(){
 return $this->hora;
 }
-
 public function setHora($hora){
  $this->hora=$hora;
 }
-
 public function getUsuario(){
 return $this->usuario;
 }
-
 public function setUsuario($usuario){
  $this->usuario=$usuario;
 }
-
 public function getItens(){
 return $this->itens;
 }
-
 public function setItens($itens){
  $this->itens=$itens;
 }
-
 public function equals($object){
 if($object instanceof Pedido){
 if($this->id!=$object->id){
@@ -106,13 +96,15 @@ else{
 return false;
 }
 }
-
 public function toString(){
  return "  [id:" .$this->id. "]  [hora:" .$this->hora. "]  [usuario:" .$this->usuario. "]  [itens:" .$this->itens. "]  " ;
 }
  public function toArray(){
-   return ["id"=>$this->id, "hora"=>$this->hora, "usuario"=>$this->usuario->toArray(), "itens"=>$this->itens];
+   return [
+  "id"=>$this->id,
+   "hora"=>$this->hora,
+   "usuario"=>$this->usuario->toArray(),
+   "itens"=>$this->itens
+   ];
  }
-
-
 }

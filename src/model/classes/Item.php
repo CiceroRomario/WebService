@@ -1,121 +1,94 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Categoria
- *
- * @author Kaiowa
- */
-
 /**
  * @Entity
  * @Table(name="item")
  */
-
-class Categoria {
-    
-/**
-  *	 @var integer @Id
+class Item extends Entidade{
+  /**
+  *	@var integer @Id
   *      @Column(name="id", type="integer")
   *      @GeneratedValue(strategy="AUTO")
   */
 private $id;
-
 /**
 	 * @ManyToOne(targetEntity="Pedido")
 	 * @JoinColumn(name="pedido_id", referencedColumnName="id")
 	 */
 private $pedido;
-
 /**
  *
  * @var string @Column(type="string", length=255)
  */
 private $produto;
-
 /**
 *	     @var integer
 *      @Column(type="integer")
 */
 private $quantidade;
-
 public function __construct($id = 0,$pedido= null,$produto= "" ,$quantidade = 0){
-	$this->id = $id;
-	$this->pedido = $pedido;
-	$this->produto = $produto;
-	$this->quantidade = $quantidade;
+$this->id = $id;
+$this->pedido = $pedido;
+$this->produto = $produto;
+$this->quantidade = $quantidade;
 }
-
 public static function construct($array){
-	$obj = new Item();
-	$obj->setId( $array['id']);
-	$obj->setProduto( $array['produto']);
-	$obj->setQuantidade( $array['quantidade']);
-	return $obj;
+$obj = new Item();
+$obj->setId( $array['id']);
+$obj->setProduto( $array['produto']);
+$obj->setQuantidade( $array['quantidade']);
+return $obj;
 }
-
 public function getId(){
-	return $this->id;
+return $this->id;
 }
-
 public function setId($id){
- 	$this->id=$id;
+ $this->id=$id;
 }
-
 public function getPedido(){
-	return $this->pedido;
+return $this->pedido;
 }
-
 public function setPedido($pedido){
- 	$this->pedido=$pedido;
+ $this->pedido=$pedido;
 }
 public function getProduto(){
-	return $this->produto;
+return $this->produto;
 }
 public function setProduto($produto){
- 	$this->produto=$produto;
+ $this->produto=$produto;
 }
 public function getQuantidade(){
-	return $this->quantidade;
+return $this->quantidade;
 }
 public function setQuantidade($quantidade){
- 	$this->quantidade=$quantidade;
+ $this->quantidade=$quantidade;
 }
 public function equals($object){
-
-	if($object instanceof Item){
-		if($this->id!=$object->id){
-		return false;
-		}
-
-		if($this->pedido!=$object->pedido){
-		return false;
-		}
-
-		if($this->produto!=$object->produto){
-		return false;
-		}
-
-		if($this->quantidade!=$object->quantidade){
-		return false;
-		}
-
-		return true;
-	}
-	else{
-	return false;
-	}
+if($object instanceof Item){
+if($this->id!=$object->id){
+return false;
 }
-
+if($this->pedido!=$object->pedido){
+return false;
+}
+if($this->produto!=$object->produto){
+return false;
+}
+if($this->quantidade!=$object->quantidade){
+return false;
+}
+return true;
+}
+else{
+return false;
+}
+}
 public function toString(){
  return "  [id:" .$this->id. "]  [pedido:" .$this->pedido. "]  [produto:" .$this->produto. "]  [quantidade:" .$this->quantidade. "]  " ;
 }
  public function toArray(){
-   return ["id"=>$this->id, "produto"=>$this->produto, "quantidade"=>$this->quantidade];
+   return [
+  "id"=>$this->id,
+   "produto"=>$this->produto,
+   "quantidade"=>$this->quantidade];
  }
 }
