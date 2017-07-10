@@ -17,11 +17,11 @@
  * @Table(name="pedido")
  */
 class Pedido extends Entidade {
-  /**
-  *	@var integer @Id
-  *      @Column(name="id", type="integer")
-  *      @GeneratedValue(strategy="AUTO")
-  */
+/**
+*   @var integer @Id
+*   @Column(name="id", type="integer")
+*   @GeneratedValue(strategy="AUTO")
+*/
 private $id;
 /**
  * @Column(type="datetime")
@@ -29,9 +29,9 @@ private $id;
  */
 private $hora;
 /**
-	 * @ManyToOne(targetEntity="Usuario",cascade={"persist"})
-	 * @JoinColumn(name="usuario_id", referencedColumnName="id")
-	 */
+* @ManyToOne(targetEntity="Usuario",cascade={"persist"})
+* @JoinColumn(name="usuario_id", referencedColumnName="id")
+*/
 private $usuario;
 /**
 * @OneToMany(targetEntity="Item", mappedBy="pedido",cascade={"persist","remove"})
@@ -101,10 +101,10 @@ public function toString(){
 }
  public function toArray(){
    return [
-  "id"=>$this->id,
-   "hora"=>$this->hora,
-   "usuario"=>$this->usuario->toArray(),
-   "itens"=>$this->itens
+    "id"=>$this->id,
+    "hora"=>$this->hora,
+    "usuario"=>$this->usuario->toArray(),
+    "itens"=>$this->itens
    ];
  }
 }
