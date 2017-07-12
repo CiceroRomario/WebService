@@ -11,7 +11,10 @@
  *
  * @author Kaiowa
  */
-class UsuarioC {
+use  src\model\UsuarioDAO;
+use  src\classes\Usuario;
+
+class UsuarioC extends AbstractC{
     
             public function __construct() {
                 parent::__construct(new UsuarioDAO ());
