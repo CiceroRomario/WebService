@@ -7,7 +7,7 @@ require_once "vendor/autoload.php";
 
 $isDevMode = true;
 
-$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src/model/classes"), $isDevMode);
+$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."Etoque/src/model/classes"), $isDevMode);
 
 $conn = array(
       		'driver' => 'pdo_mysql',

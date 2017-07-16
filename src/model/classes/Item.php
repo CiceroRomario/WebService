@@ -1,4 +1,6 @@
 <?php
+namespace src\model\classes;
+
 /**
  * @Entity
  * @Table(name="item")

@@ -1,4 +1,5 @@
 <?php
+namespace src\model\classes;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
